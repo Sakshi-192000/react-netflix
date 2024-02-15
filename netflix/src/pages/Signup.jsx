@@ -11,7 +11,9 @@ const Signup = () => {
   const navigate = useNavigate();
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
+    if(password.length<6){
+    alert('password must be of atleast 6 characters')
+}
     try {
       await signUp(email, password);
       navigate("/");

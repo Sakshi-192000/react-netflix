@@ -11,6 +11,9 @@ const Login = () => {
   const navigate = useNavigate();
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (!user?.email) {
+      alert("User doesn't exist , try signing up as a new user");
+    }
     try {
       await logIn(email, password);
       navigate("/");
